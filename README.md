@@ -1,24 +1,31 @@
-# Calculador
-Задание: "текстовый калькулятор"
+# Calculator
+```markdown
+# Natural Language Text Calculator
 
-Выполнила: Манаева Дарья
+A robust Python-based text processing engine that parses, interprets, and evaluates mathematical expressions written entirely in natural language text (e.g., `"twenty five plus six multiplied by minus two"` / `"двадцать пять плюс шесть умножить на минус два"`). 
 
-Группа: ТРПО24-3
+This project showcases structural parsing, lexical analysis, an implementation of operator precedence algorithms, and programmatic conversion between textual numerals and mathematical integer types.
 
-Базовая часть:
-Написать калькулятор для строковых выражений вида '<число > <операция> <число>', где <число> - не отрицательное целое число меньшее 100, которое написано словами, например "двадцать шесть". <арифметическая операция> - одна из операций "плюс", "минус", "умножить".
+## Key Features
 
+* **Natural Language Parsing**: Seamlessly translates word-based numbers into standard machine-readable numeric formats.
+* **Complex Operator Precedence**: Evaluates multi-step arithmetic expressions with proper mathematical ordering (multiplication takes precedence over addition and subtraction).
+* **Parentheses & Explicit Grouping**: Supports nested execution contexts via clear structural verbal indicators (`"скобка открывается"` / `"скобка закрывается"`).
+* **Negative Numbers Engine**: Full support for negative values, both as inputs within the expression, intermediate processing steps, and final computed outcomes.
+* **Robust Text Generator**: Features an inverse mapping algorithm that translates raw evaluation outcomes back into grammatically structured text.
 
-Результат выполнения операции:
-Вернуть строку в виде текстового представления числа, которое получается в результате выполнения заданного выражение. Пример: calc("шесть плюс пять минус минус один") -> "двеннадцать".
-Оформить калькулятор в виде функции, которая принимает на вход строку и возвращает строку.
+---
 
+## Supported Language Operations
 
-Дополнительная часть:
-3) Реализовать текстовый калькулятор для выражения из произвольного количества операций с учетом приоритета операций. Пример: calc("десять минус пять умножить на два минус шесть") -> "минус шесть". (3 балла)
-4) Расширение задания 3. Добавить поддержку приоритета операций с помощью скобок. Пример: calc("скобка открывается пять минус шесть скобка закрывается умножить на семь минус два") -> "минус девять". (3 балла)
-5) Добавить возможность использования отрицательных чисел. Пример: calc("пять минус минус шесть") -> "одиннадцать". (1 балл)
+The engine processes mathematical syntax through specific keyword mappings:
 
+| Operational Element | Verbal Expression Mapping (Russian Syntax) | Equivalent Action |
+| :--- | :--- | :--- |
+| **Addition** | `плюс` | $+$ |
+| **Subtraction** | `минус` | $-$ |
+| **Multiplication** | `умножить` / `умножить на` | $\times$ |
+| **Left Grouping** | `скобка открывается` | $($ |
+| **Right Grouping** | `скобка закрывается` | $)$ |
 
-Итог:
-В процессе работы были полностью реализованы: базовая часть и 3, 4, 5 задания из дополнительной части. Суммарно полученное количество баллов равняется 7. Данное задание успешно выполнено, так как требуется набрать минимум 7 баллов из дополнительной части и полностью выполнить базовую часть.
+---
